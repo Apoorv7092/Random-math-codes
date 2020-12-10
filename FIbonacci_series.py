@@ -2,10 +2,8 @@
 
 def fib_series(n):
     if n>1:
-        globals()["f_%i"%(n-1)] = fib_series(n-1)
-        globals()["f_%i"%(n-2)] = fib_series(n-2)
-        globals()["f_%i" %n] = globals()["f_%i"%(n-1)] +globals()["f_%i"%(n-2)]
-        return globals()["f_%i" %n]
+        fib = fib_series(n-1) + fib_series(n-2)
+        return fib
     elif n==1:
         return 1
     elif n==0:
